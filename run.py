@@ -65,7 +65,7 @@ if __name__ == "__main__":
                 video_list = get_video(i)
                 for j in video_list:
                     ac_time = China_stp- j['created'] 
-                    if ac_time<7000 :
+                    if ac_time<7200 :
                         import datetime
                         dateArray = datetime.datetime.fromtimestamp(j['created']+28800)
                         otherStyleTime = dateArray.strftime("%m-%d %H:%M:%S")
