@@ -65,11 +65,12 @@ if __name__ == "__main__":
                 video_list = get_video(i)
                 for j in video_list:
                     ac_time = China_stp- j['created'] 
-                    if ac_time<7200 :
+                    if ac_time<7000 :
                         import datetime
                         dateArray = datetime.datetime.fromtimestamp(j['created']+28800)
                         otherStyleTime = dateArray.strftime("%m-%d %H:%M:%S")
                         sent_message(token=token,secret=secret,text=j['author']+" "+otherStyleTime+"\n"+j['description'],title=j['title'],picUrl="https:{}".format(j['pic']),messageUrl="https://www.bilibili.com/video/{}".format(j['bvid']))
+                  
                         print("log:",j['created'],j['author'],j['title'],"\n")
                     else:
                         break
